@@ -60,3 +60,4 @@ outputs:
 ## Other items
 * On `run: |` then the next lines you can run and can have more than one line.
     * it is really the `|` that does it.
+    * `.` let your use VSCode in github
