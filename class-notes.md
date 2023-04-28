@@ -10,6 +10,15 @@ events (will triger) -> workflows -> job -> steps -> actions
 
 ### Events:
 on: ...
+#### Workflow_dispatch
+* you can add manually start a workflow by using `workflow_dispatch`
+* This is helpful if your trying to debug something with the workflow
+* This has to be on the main branch
+* you can accessed by using `github.event.inputs.<name>`
+workflow_dispatch:
+    inputs:
+        myValues:
+            description: 'Input Values'
 
 ### Jobs
 jobs:
@@ -27,3 +36,7 @@ with:
 
 ## Finding different actions
 https://github.com/marketplace?type=actions
+
+## Environment files
+* you can make variables that can be used after.
+* command is `run:` then using it after `${{ <type>.<name> }}` (Example has env but I have been using secrets)
