@@ -58,11 +58,12 @@ outputs:
 * `uses: <repo name>/<action name>@<tag>`
 
 ## Logs
-* To share the log you can right click and copy the link for that line.
+* To share the log you can right click and copy the link for that line. Look for `Copy Clean Link`
 
 ## Other items
 * On `run: |` then the next lines you can run and can have more than one line.
     * it is really the `|` that does it.
 * `.` let your use VSCode in github
-* After create a badge 
+* After create a badge from the Action tab you can copy the it and add it to md file.
+Here is the badge: 
 [![Simple Pipe](https://github.com/nrstaber/greetings-add/actions/workflows/pipeline.yml/badge.svg)](https://github.com/nrstaber/greetings-add/actions/workflows/pipeline.yml)
