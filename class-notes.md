@@ -16,3 +16,14 @@ jobs:
     build:
         steps:
         - uses: actions/checkout@v2 (This v2 can be branch or other things)
+
+## github Actions storage - Artifacts
+* you can create a artifact that can be used in another job.
+* They are storage for 90 days.
+uses: actions/upload-artifact@v2
+with:
+    name: theNameGoesHere
+    path: build/libs
+
+## Finding different actions
+https://github.com/marketplace?type=actions
