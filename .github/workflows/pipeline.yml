@@ -100,7 +100,16 @@ jobs:
     - run: echo 
     - shell: bash
       run: |
-        echo argument count is ${{ steps.report-count.outputs.arg-count }}  
+        echo argument count is ${{ steps.report-count.outputs.arg-count }}
+
+  create-issue-on-failure:
+    needs: [test-run, count-args]
+    # When to run this step.
+    if: always() && failure() 
+    uses: ./.github/workflows/create-failure-issue.yml 
+    with:
+      title: "Automated workflow failure issue for commit ${{ github.sha }}"
+      body: "This issue was automatically created by the GitHub Action workflow ** ${{ github.workflow }} **"
 
   # info:
   #   runs-on: ubuntu-latest

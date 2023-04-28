@@ -70,6 +70,10 @@ outputs:
 * you will need to clean your inputs.
 * Your title of pull request could create problems too.
 
+## Chaining Workflows
+* `workflow_call`
+* Adding in `if: success()` will make sure the steps will pass before running this on.
+
 ## Other items
 * On `run: |` then the next lines you can run and can have more than one line.
     * it is really the `|` that does it.
@@ -77,3 +81,4 @@ outputs:
 * After create a badge from the Action tab you can copy the it and add it to md file.
 Here is the badge: 
 [![Simple Pipe](https://github.com/nrstaber/greetings-add/actions/workflows/pipeline.yml/badge.svg)](https://github.com/nrstaber/greetings-add/actions/workflows/pipeline.yml)
+* Can add if statements `if \n stuff \n else \n stuff \n fi`
