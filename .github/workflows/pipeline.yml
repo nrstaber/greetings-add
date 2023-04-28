@@ -101,6 +101,7 @@ jobs:
     - shell: bash
       run: |
         echo argument count is ${{ steps.report-count.outputs.arg-count }}
+        exit 1
 
   create-issue-on-failure:
     needs: [test-run, count-args]
