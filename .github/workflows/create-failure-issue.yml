@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest 
   
     permissions:
-      issues: write 
+      issues: none 
     steps:
       - name: Create issue using REST API
         run: |
