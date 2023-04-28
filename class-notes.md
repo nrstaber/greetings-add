@@ -40,3 +40,7 @@ https://github.com/marketplace?type=actions
 ## Environment files
 * you can make variables that can be used after.
 * command is `run:` then using it after `${{ <type>.<name> }}` (Example has env but I have been using secrets)
+
+## How do output from a step in another step
+* Need `id:`
+* format for reference `${{steps.<step id>.outputs.<name of output parameter>}}`
