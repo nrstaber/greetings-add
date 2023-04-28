@@ -73,6 +73,7 @@ outputs:
 ## Chaining Workflows
 * `workflow_call`
 * Adding in `if: success()` will make sure the steps will pass before running this on.
+* syntax for calling another project (What it sounded like to me) `uses: <username>/<projectName>/.github/workflows/create-failure-issue.yml`
 
 ## Other items
 * On `run: |` then the next lines you can run and can have more than one line.
