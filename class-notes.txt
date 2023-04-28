@@ -1,1 +1,0 @@
-Book he is writing: https://www.amazon.com/Learning-GitHub-Actions-Automation-Integration/dp/109813107X
