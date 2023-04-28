@@ -24,15 +24,16 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     # Map a step output to a job output
+    # jarpath is a var that is set below in Set output
     outputs:
       artifact-path: ${{ steps.setoutput.outputs.jarpath }}
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Set up JDK 11
       uses: actions/setup-java@v3
       with:
@@ -46,6 +47,7 @@ jobs:
     - name: Set timestamp
       #Setting this TDS as a environment variable
       run: echo TDS=$(date +'%Y-%m-%dT%H-%M-%S') >> $GITHUB_ENV
+
     - name: Tag artifact
       run: mv build/libs/greetings-add.jar build/libs/greetings-add-${{github.event.inputs.myVersion }}${{ env.TDS }}.jar
 
@@ -61,7 +63,8 @@ jobs:
   
   print-build-output:
     runs-on: ubuntu-latest
-    # Saying it needs to wait for the build step.
+    # Saying it needs to wait for the build job.
     needs: build
+    
     steps:
       - run: echo ${{needs.build.outputs.artifact-path}}

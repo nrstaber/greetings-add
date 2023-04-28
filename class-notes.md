@@ -46,5 +46,5 @@ https://github.com/marketplace?type=actions
 * format for reference `${{steps.<step id>.outputs.<name of output parameter>}}`
 outputs:
     artifact-tag: ${{ steps.changelog.outputs.version }}
-* to tell the job that needs to wait for another job add `needs` so it looks like 
+* to tell the job that needs to wait for another job add `needs: <job name>` then add to a step what you need 
     `${{needs.<name of job>.outputs.<job output name> }}`
