@@ -62,6 +62,14 @@ outputs:
 * you can add warnings, debug, and errors into your github Actions
     * by adding `run: echo "::warning::Text goes here"`
 
+## Secrets
+* It will not be print out the secrets when logging. It will print as ****
+* GITHUB_TOKEN might be more save than secrets. `gitub.token`
+
+## Script Injection
+* you will need to clean your inputs.
+* Your title of pull request could create problems too.
+
 ## Other items
 * On `run: |` then the next lines you can run and can have more than one line.
     * it is really the `|` that does it.

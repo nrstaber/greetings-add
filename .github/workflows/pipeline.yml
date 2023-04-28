@@ -83,9 +83,11 @@ jobs:
         
     - name: Execute test
       shell: bash
+      env: 
+        ARGS: ${{ github.event.inputs.myValues }}
       run: | 
         chmod +x ./test-script.sh
-        ./test-script.sh ${{ needs.build.outputs.artifact-path }} ${{ github.event.inputs.myValues }}
+        ./test-script.sh ${{ needs.build.outputs.artifact-path }} "ARGS"
 
   count-args: 
     runs-on: ubuntu-latest
@@ -100,16 +102,16 @@ jobs:
       run: |
         echo argument count is ${{ steps.report-count.outputs.arg-count }}  
 
-  info:
-    runs-on: ubuntu-latest
+  # info:
+  #   runs-on: ubuntu-latest
     
-    steps:
-    - name: Print warning message
-      run: |
-        echo "::warning::This version is for debugging only."
+  #   steps:
+  #   - name: Print warning message
+  #     run: |
+  #       echo "::warning::This version is for debugging only."
         
-    - name: Dump context for runner
-      env:
-        RUNNER_CONTEXT: ${{ toJSON(runner) }}
-      run: 
-        echo "::debug::Runner context is above."
+  #   - name: Dump context for runner
+  #     env:
+  #       RUNNER_CONTEXT: ${{ toJSON(runner) }}
+  #     run: 
+  #       echo "::debug::Runner context is above."
