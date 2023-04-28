@@ -44,3 +44,7 @@ https://github.com/marketplace?type=actions
 ## How do output from a step in another step
 * Need `id:`
 * format for reference `${{steps.<step id>.outputs.<name of output parameter>}}`
+outputs:
+    artifact-tag: ${{ steps.changelog.outputs.version }}
+* to tell the job that needs to wait for another job add `needs` so it looks like 
+    `${{needs.<name of job>.outputs.<job output name> }}`

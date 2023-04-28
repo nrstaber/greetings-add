@@ -27,6 +27,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    # Map a step output to a job output
+    outputs:
+      artifact-path: ${{ steps.setoutput.outputs.jarpath }}
+
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -50,3 +54,14 @@ jobs:
       with:
         name: greetings-jar
         path: build/libs
+    
+    - name: Set output
+      id: setoutput
+      run: echo jarpath=build/libs/greetings-add-${{ github.event.inputs.myVersion }}${{ env.TDS }}.jar >> $GITHUB_OUTPUT
+  
+  print-build-output:
+    runs-on: ubuntu-latest
+    # Saying it needs to wait for the build step.
+    needs: build
+    steps:
+      - run: echo ${{needs.build.outputs.artifact-path}}
