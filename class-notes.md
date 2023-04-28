@@ -59,6 +59,8 @@ outputs:
 
 ## Logs
 * To share the log you can right click and copy the link for that line. Look for `Copy Clean Link`
+* you can add warnings, debug, and errors into your github Actions
+    * by adding `run: echo "::warning::Text goes here"`
 
 ## Other items
 * On `run: |` then the next lines you can run and can have more than one line.
