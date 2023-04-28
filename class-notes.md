@@ -54,6 +54,9 @@ outputs:
 
 ## Testing with Github Actions
 
+## Custom Actions
+* `uses: <repo name>/<action name>@<tag>`
 
 ## Other items
-* On `run: |` then the next lines you can run and can have more than one line
+* On `run: |` then the next lines you can run and can have more than one line.
+    * it is really the `|` that does it.
