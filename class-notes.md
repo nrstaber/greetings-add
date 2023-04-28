@@ -48,3 +48,12 @@ outputs:
     artifact-tag: ${{ steps.changelog.outputs.version }}
 * to tell the job that needs to wait for another job add `needs: <job name>` then add to a step what you need 
     `${{needs.<name of job>.outputs.<job output name> }}`
+
+## Accessing a file within the repostiory
+* you can store the files the artifact then you can use them in another job.
+
+## Testing with Github Actions
+
+
+## Other items
+* On `run: |` then the next lines you can run and can have more than one line
